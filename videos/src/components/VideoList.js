@@ -1,9 +1,12 @@
 import React from 'react';
 import VideoItem from './VideoItem';
 
-const VideoList = ({ videos }) => {
+const VideoList = ({ videos, onVideoSelect }) => {
+    // on video select is a prop, its just destructured
+    // same thing as this.props.onVideoSelect, thats coming into the 
+    // parameter 
     const renderedList = videos.map(video => {
-        return <VideoItem video={video}/>;
+        return <VideoItem onVideoSelect={onVideoSelect} video={video}/>;
     });
 
     return <div className="ui relaxed divided list">{renderedList}</div>;
